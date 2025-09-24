@@ -1,15 +1,16 @@
 # PDF File Size Reducer
 
-A comprehensive Python toolkit that dramatically reduces PDF file sizes from 18MB to 2-3MB while preserving image quality and colors. Features multiple specialized compressors for different PDF types and interactive user interfaces.
+A streamlined Python toolkit that dramatically reduces PDF file sizes from 18MB to 2-3MB while preserving image quality and colors. Features an advanced universal compressor and diagnostic tools with interactive user interfaces.
 
 ## 🚀 Key Features
 
-- **🎯 Specialized Compressors**: Different tools for different PDF types (FlateDecode, JPEG, mixed content)
+- **🎯 Universal PDF Compressor**: Handles all PDF types (FlateDecode, JPEG, mixed content) in one tool
 - **🎨 Quality Preservation**: Smart color handling that preserves grayscale and color images correctly
-- **📊 Diagnostic Tools**: Analyze why a PDF can/cannot be compressed
+- **📊 Built-in Diagnostics**: Analyze why a PDF can/cannot be compressed
 - **💬 Interactive Interface**: No complex command-line arguments needed
 - **🔍 Smart Detection**: Automatically detects image types and applies optimal compression
 - **📈 Real-time Progress**: See compression progress and savings in real-time
+- **🧹 Clean & Simple**: Streamlined toolkit with just the essential tools
 
 ## 📦 Installation
 
@@ -26,9 +27,9 @@ A comprehensive Python toolkit that dramatically reduces PDF file sizes from 18M
 
 ## 🛠️ Available Tools
 
-### 1. **Quality-Preserving Compressor** (⭐ Recommended)
+### 1. **PDF Compressor** (⭐ Main Tool)
 
-Best for preserving image colors and quality while achieving good compression.
+Advanced PDF compressor with quality preservation and smart image handling.
 
 ```bash
 python pdf_compressor_quality.py
@@ -36,50 +37,17 @@ python pdf_compressor_quality.py
 
 **Features:**
 
-- ✅ Preserves grayscale images as grayscale
-- ✅ Smart color space handling (RGB, CMYK, RGBA)
-- ✅ Quality tiers: High/Balanced/Compact
-- ✅ Minimal unnecessary resizing
+- ✅ **Smart Image Detection**: Handles FlateDecode, JPEG, and all image types
+- ✅ **Quality Preservation**: Maintains grayscale vs color image integrity
+- ✅ **Interactive Interface**: Simple prompts guide you through the process
+- ✅ **Multiple Quality Tiers**: High/Balanced/Compact settings
+- ✅ **Real-time Progress**: See compression progress and results
+- ✅ **Color Space Handling**: RGB, CMYK, RGBA support
+- ✅ **Specialized Extraction**: Multiple fallback methods for reliability
 
-### 2. **FlateDecode Specialist**
+### 2. **PDF Analyzer**
 
-Perfect for PDFs with FlateDecode compressed images (common in design software).
-
-```bash
-python pdf_compressor_flatedecode.py
-```
-
-**Features:**
-
-- ✅ Specialized FlateDecode image extraction
-- ✅ Can achieve 80-90% compression on image-heavy PDFs
-- ✅ Real-time compression feedback
-
-### 3. **Simple Compressor**
-
-Reliable general-purpose compressor for most PDFs.
-
-```bash
-python pdf_compressor_simple.py
-```
-
-**Features:**
-
-- ✅ Works with most PDF types
-- ✅ Clean, simple interface
-- ✅ Good for text-heavy PDFs
-
-### 4. **Original Interactive Compressor**
-
-Feature-rich compressor with command-line options.
-
-```bash
-python pdf_compressor.py
-```
-
-### 5. **PDF Analyzer**
-
-Diagnose why a PDF cannot be compressed much.
+Diagnostic tool to understand your PDF structure and compression potential.
 
 ```bash
 python pdf_analyzer.py
@@ -87,30 +55,38 @@ python pdf_analyzer.py
 
 **Features:**
 
-- 🔍 Analyzes PDF structure and content
-- 📊 Shows compression potential
-- 💡 Explains why compression is limited
+- 🔍 **Deep PDF Analysis**: Examines document structure, images, and content
+- 📊 **Compression Assessment**: Shows why a PDF can/cannot be compressed
+- 💡 **Detailed Insights**: Explains image types, compression status, and recommendations
+- 📋 **Comprehensive Report**: File size breakdown and optimization suggestions
 
 ## 📋 Quick Start Guide
 
 ### Step 1: Choose Your Tool
 
-- **Unknown PDF type?** → Start with `pdf_analyzer.py` to understand your PDF
-- **Design/Graphics PDF?** → Use `pdf_compressor_flatedecode.py`
-- **Want best quality?** → Use `pdf_compressor_quality.py`
-- **Simple compression?** → Use `pdf_compressor_simple.py`
+- **Want to compress a PDF?** → Use `pdf_compressor_quality.py` (main tool)
+- **Don't know why compression is poor?** → Start with `pdf_analyzer.py` to diagnose
+- **Want to see usage examples?** → Check `example.py`
 
 ### Step 2: Run the Tool
 
-All tools are **interactive** - just run them and follow the prompts:
+Both tools are **interactive** - just run them and follow the prompts:
 
 ```bash
-# Example: Quality-preserving compressor
+# Main PDF compressor
 python pdf_compressor_quality.py
 
 # The program will ask:
 # 📁 Enter PDF file path: [paste your file path here]
 # 🎨 Choose quality level: [1, 2, or 3]
+```
+
+```bash
+# Diagnostic analyzer
+python pdf_analyzer.py
+
+# The program will ask:
+# 📁 Enter path to PDF file: [paste your file path here]
 ```
 
 ### Step 3: Choose Quality Settings
@@ -158,31 +134,31 @@ For an 18MB PDF with images, you can typically expect:
 
 ## 🎯 Expected Results by PDF Type
 
-| PDF Type              | Original Size | Compressed Size | Reduction | Best Tool              |
-| --------------------- | ------------- | --------------- | --------- | ---------------------- |
-| **Design/Graphics**   | 15-20MB       | 2-4MB           | 80-90%    | FlateDecode Specialist |
-| **Scanned Documents** | 20-50MB       | 3-8MB           | 70-85%    | Quality Preserving     |
-| **Mixed Content**     | 10-30MB       | 3-10MB          | 60-80%    | Quality Preserving     |
-| **Text-Heavy**        | 5-15MB        | 4-12MB          | 20-50%    | Simple Compressor      |
+| PDF Type              | Original Size | Compressed Size | Reduction | Settings              |
+| --------------------- | ------------- | --------------- | --------- | --------------------- |
+| **Design/Graphics**   | 15-20MB       | 2-4MB           | 80-90%    | Compact/Balanced      |
+| **Scanned Documents** | 20-50MB       | 3-8MB           | 70-85%    | Balanced/High Quality |
+| **Mixed Content**     | 10-30MB       | 3-10MB          | 60-80%    | Balanced              |
+| **Text-Heavy**        | 5-15MB        | 4-12MB          | 20-50%    | Any setting           |
 
 ## 💡 Tips for Best Results
 
 ### For Maximum Compression (18MB → 2MB):
 
-1. Use **FlateDecode Specialist** for design PDFs
-2. Choose **Quality 15-25** in any tool
-3. Let the tool resize very large images
+1. Use `pdf_compressor_quality.py` with **Compact** settings
+2. The tool automatically handles all image types (FlateDecode, JPEG, etc.)
+3. Let the tool resize very large images automatically
 
 ### For Quality Preservation:
 
-1. Use **Quality-Preserving Compressor**
-2. Choose **Balanced** or **High Quality** settings
-3. Tool will preserve grayscale vs color correctly
+1. Use `pdf_compressor_quality.py` with **High Quality** settings
+2. Tool will preserve grayscale vs color correctly
+3. Smart extraction maintains image integrity
 
 ### If Compression is Poor:
 
-1. Run **PDF Analyzer** first to understand why
-2. Try **FlateDecode Specialist** if you have design/graphics PDFs
+1. Run `pdf_analyzer.py` first to understand why
+2. The main compressor handles all PDF types automatically
 3. Some text-heavy PDFs cannot be compressed much
 
 ## 🔧 Troubleshooting
@@ -225,12 +201,9 @@ For an 18MB PDF with images, you can typically expect:
 
 ```
 ReduceFileSize/
-├── pdf_compressor_quality.py      # ⭐ Best quality preservation
-├── pdf_compressor_flatedecode.py  # 🎯 FlateDecode specialist
-├── pdf_compressor_simple.py       # 🔧 Simple & reliable
-├── pdf_compressor.py              # 📋 Original with CLI options
-├── pdf_analyzer.py                # 🔍 Diagnostic tool
-├── example.py                     # 📖 Usage examples
-├── requirements.txt               # 📦 Dependencies
-└── README.md                      # 📚 This file
+├── pdf_compressor_quality.py      # ⭐ Main PDF compressor (quality-preserving)
+├── pdf_analyzer.py                # 🔍 Diagnostic tool for PDF analysis
+├── example.py                     # 📖 Usage examples and help
+├── requirements.txt               # 📦 Python dependencies
+└── README.md                      # 📚 Documentation
 ```
